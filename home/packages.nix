@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   commonPackages = with pkgs; [
     # General packages for development and system management
     bat
@@ -28,6 +29,7 @@
 
     # testing
     gemini-cli-bin
+    tenv
   ];
 
   linuxOnlyPackages = with pkgs; [
@@ -60,17 +62,10 @@
   darwinOnlyPackages = with pkgs; [
     gnugrep
   ];
-in {
+in
+{
   home.packages =
     commonPackages
-    ++ (
-      if pkgs.stdenv.isLinux
-      then linuxOnlyPackages
-      else []
-    )
-    ++ (
-      if pkgs.stdenv.isDarwin
-      then darwinOnlyPackages
-      else []
-    );
+    ++ (if pkgs.stdenv.isLinux then linuxOnlyPackages else [ ])
+    ++ (if pkgs.stdenv.isDarwin then darwinOnlyPackages else [ ]);
 }
