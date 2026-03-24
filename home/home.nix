@@ -7,7 +7,7 @@
 }: {
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./modules/cachix.nix
+    #    ./modules/cachix.nix
     ./modules/direnv.nix
     ./modules/ghostty.nix
     ./modules/git.nix

@@ -21,12 +21,13 @@
       "hiddenbar"
     ];
   };
+  nix.enable = false;
 
-  nix.gc.interval = {
-    Weekday = 0;
-    Hour = 2;
-    Minute = 0;
-  };
+  #nix.gc.interval = {
+  #  Weekday = 0;
+  #  Hour = 2;
+  #  Minute = 0;
+  #};
 
   programs.man.enable = false;
   programs.info.enable = false;
