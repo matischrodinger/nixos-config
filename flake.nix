@@ -1,5 +1,5 @@
 {
-  description = "Austin likes this";
+  description = "Mati likes this";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -53,9 +53,9 @@
   } @ inputs: let
     user = {
       # change to your preferred settings
-      name = "nason";
-      fullName = "Austin Nason";
-      email = "austin.nason@schrodinger.com";
+      name = "schneide";
+      fullName = "Mati Schneider";
+      email = "mati.schneider@schrodinger.com";
     };
     linuxSystems = [
       "x86_64-linux"
