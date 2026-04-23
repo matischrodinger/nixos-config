@@ -14,7 +14,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "zoc"
       "zoom"
       "google-chrome"
       "meetingbar"
