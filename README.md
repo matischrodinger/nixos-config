@@ -18,7 +18,7 @@ Bootstrap
 ```shell
 mkdir ~/src
 cd ~/src
-git clone git@github.com:na-son/nixos-config.git
+git clone git@github.com:matischrodinger/nixos-config.git
 nix build .#darwinConfigurations.macos.system
 ./result/sw/bin/nh darwin switch
 ```

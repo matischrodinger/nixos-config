@@ -114,10 +114,6 @@
       };
     };
 
-    keyboard = {
-      enableKeyMapping = true;
-      remapCapsLockToControl = true;
-    };
   };
 
   users.users.${user.name} = {

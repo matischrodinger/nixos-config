@@ -33,7 +33,6 @@
         "type:keyboard" = {
           xkb_layout = "us";
           xkb_variant = "dvorak";
-          xkb_options = "ctrl:nocaps";
           repeat_delay = "300";
           repeat_rate = "50";
         };

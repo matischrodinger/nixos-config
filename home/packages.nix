@@ -1,5 +1,20 @@
 { pkgs, ... }:
 let
+  # Pinned ahead of nixpkgs (which has 4.82.2). Fleet >= 4.84 needs Go 1.26.
+  # Drop this override when nixpkgs catches up to >= 4.84.0.
+  fleetctl = (pkgs.fleetctl.override {
+    buildGoModule = pkgs.buildGo126Module;
+  }).overrideAttrs (_: rec {
+    version = "4.84.0";
+    src = pkgs.fetchFromGitHub {
+      owner = "fleetdm";
+      repo = "fleet";
+      tag = "fleet-v${version}";
+      hash = "sha256-jwmb7c55/u3FZ9U5gG6tJUbKv8MWuL6rv5dvqlhqQSM=";
+    };
+    vendorHash = "sha256-KdKCEqt1FpeHH8SKCHan1KV+adHoBod9YLvEVrId1tw=";
+  });
+
   commonPackages = with pkgs; [
     # General packages for development and system management
     bat
@@ -18,6 +33,7 @@ let
     # devtools
     direnv
     devenv
+    fleetctl
 
     # Nix
     nil
