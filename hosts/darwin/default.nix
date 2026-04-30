@@ -14,10 +14,11 @@
   homebrew = {
     enable = true;
     casks = [
-      "zoom"
       "google-chrome"
       "meetingbar"
       "hiddenbar"
+      "ghostty"
+      "zed"
     ];
   };
   nix.enable = false;
